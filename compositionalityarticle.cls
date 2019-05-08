@@ -1276,10 +1276,10 @@
 }
 
 % set default options for hyperref to make links more pretty
-\PassOptionsToPackage{colorlinks=true,hyperindex}{hyperref}
-\ifunpublished\else%
-\PassOptionsToPackage{allcolors=mutedcoral}{hyperref}
-\fi%
+\PassOptionsToPackage{colorlinks=true,hyperindex,allcolors=mutedcoral}{hyperref}
+% \ifunpublished\else%
+% \PassOptionsToPackage{allcolors=mutedcoral}{hyperref}
+% \fi%
 \ifnum\pdfoutput=0
 \else
 \PassOptionsToPackage{breaklinks=true}{hyperref}
