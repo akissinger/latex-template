@@ -10,6 +10,28 @@
 \usepackage{tikz}
 \usepackage{lipsum}
 
+% Fix amsthm clobbering Compositionality fonts
+\usepackage{amsthm}
+\newtheoremstyle{definition}{8pt}{8pt}
+{\merriweatherlight}{}
+{\merriweatherlight\bfseries}
+{.}{1em}{}
+
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+\pushQED{\qed}%
+\merriweatherlight \topsep6\p@\@plus6\p@\relax
+\trivlist
+\item\relax
+{\itshape
+#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+}{%
+\popQED\endtrivlist\@endpefalse
+}
+\makeatother
+% ...end amsthm fix.
+
+\theoremstyle{definition}
 \newtheorem{theorem}{Theorem}
 
 \begin{document}
